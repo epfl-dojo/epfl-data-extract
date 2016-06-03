@@ -10,6 +10,7 @@
   "author": "Nicolas Borboën",
   "license": "MIT",
   "dependencies": {
+    "d3": "^3.5.17",
     "debug": "^2.2.0",
     "lodash": "^4.13.1",
     "spahql": "^0.7.6",
