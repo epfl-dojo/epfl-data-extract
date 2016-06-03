@@ -8,26 +8,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.css"  rel="stylesheet" type="text/css" />
     <script type="text/javascript">
+/*
+        "study": "Doctorants",
+                "data": {
+            "Programme de formation": "Doctorants",
+                    "Année": "1982",
+                    "CH": "127",
+                    "Europe": "67",
+                    "Asie": "18",
+                    "Amér.": "8",
+                    "Afrique": "33",
+                    "Océan.": "1",
+                    "Total": "254"
+        }
+
+        },*/
+
     $(function () {
         var chart = c3.generate({
             data: {
+                x: 'x',
                 columns: [
-                    ['data1', -30, 200, 200, 400, -150, 250],
-                    ['data2', 130, 100, -100, 200, -150, 50],
-                    ['data3', -230, 200, 200, -300, 250, 250]
+                    ['x', 'CH', 'EU', 'ASIA', 'AMER', 'AFR', 'OCÉ', 'Total'],
+                    ['Doctorants', 127, 67, 18, 8, 33, 1, 254],
+                    ['Total étudiants', 1570, 405, 105, 61, 166, 1, 2308],
+                    ['Diplome', 12,33,444,22,11,44,777]
                 ],
                 type: 'bar',
-                groups: [
-                    ['data1', 'data2']
-                ]
+                /*groups: [
+                    ['Doctorants', 'Total étudiants', 'Diplome']
+                ],*/
             },
-            grid: {
+            axis: {
+                x: {
+                    type: 'category' // this needed to load string x value
+                }
+            }
+            /*grid: {
                 y: {
                     lines: [{value:0}]
                 }
-            }
+            }*/
         });
 
+/*
         setTimeout(function () {
             chart.groups([['data1', 'data2', 'data3']])
         }, 1000);
@@ -41,7 +65,7 @@
         setTimeout(function () {
             chart.groups([['data1', 'data2', 'data3', 'data4']])
         }, 2000);
-
+*/
     });
     </script>
 </head>
